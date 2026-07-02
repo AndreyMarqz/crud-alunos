@@ -22,4 +22,47 @@ public class AvaliacaoEntity {
     @ManyToOne
     @JoinColumn(name = "materia_id")
     private MateriaEntity materia;
+
+
+    public AvaliacaoEntity() {
+    }
+
+    public AvaliacaoEntity(UUID id, Double nota, AlunoEntity aluno, MateriaEntity materia) {
+        this.id = id;
+        this.nota = nota;
+        this.aluno = aluno;
+        this.materia = materia;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public Double getNota() {
+        return nota;
+    }
+
+    public void setNota(Double nota) {
+        this.nota = nota;
+    }
+
+    public AlunoEntity getAluno() {
+        return aluno;
+    }
+
+    public void setAluno(AlunoEntity aluno) {
+        this.aluno = aluno;
+    }
+
+    public MateriaEntity getMateria() {
+        return materia;
+    }
+
+    public void setMateria(MateriaEntity materia) {
+        this.materia = materia;
+    }
 }
