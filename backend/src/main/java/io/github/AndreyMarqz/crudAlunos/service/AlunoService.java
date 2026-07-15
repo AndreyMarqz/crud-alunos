@@ -72,12 +72,13 @@ public class AlunoService {
     }
 
     @Transactional
-    public void deletarAluno(UUID id) {
+    public AlunoResponseDto deletarAluno(UUID id) {
 
         if (!alunoRepository.existsById(id)) {
             throw new RuntimeException("Aluno não encontrado para exclusão.");
         }
         alunoRepository.deleteById(id);
+        return null;
     }
 }
 
