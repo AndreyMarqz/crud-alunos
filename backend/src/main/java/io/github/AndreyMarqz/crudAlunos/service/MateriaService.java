@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 @Service
 public class MateriaService {
 
-    private MateriaRepository materiaRepository;
+    private final MateriaRepository materiaRepository;
 
     public MateriaService(MateriaRepository materiaRepository) {
         this.materiaRepository = materiaRepository;
@@ -59,11 +59,12 @@ public class MateriaService {
     }
 
     @Transactional
-    public void deletarMateria(UUID id) {
+    public MateriaResponseDto deletarMateria(UUID id) {
 
         if (!materiaRepository.existsById(id)) {
             throw new RuntimeException("Matéria não encontrada para exclusão.");
         }
         materiaRepository.deleteById(id);
+        return null;
     }
 }
