@@ -20,7 +20,6 @@ public class MateriaController {
         this.materiaService = materiaService;
     }
 
-    //cadastrar
     @PostMapping("/cadastrar")
     public ResponseEntity<MateriaResponseDto> cadastrar(@RequestBody MateriaRequestDto materiaRequestDto) {
 
@@ -28,7 +27,6 @@ public class MateriaController {
         return ResponseEntity.status(HttpStatus.CREATED).body(materiaSalva);
     }
 
-    //buscarPorId
     @GetMapping("/buscar/{id}")
     public ResponseEntity<MateriaResponseDto> buscarPorId(@PathVariable UUID id) {
 
@@ -36,7 +34,6 @@ public class MateriaController {
         return ResponseEntity.ok(materiaEncontrada);
     }
 
-    //listarTodos
     @GetMapping("/listar")
     public ResponseEntity<List<MateriaResponseDto>> listarTodos() {
 
@@ -44,7 +41,6 @@ public class MateriaController {
         return ResponseEntity.ok(listarMaterias);
     }
 
-    //atualizar
     @PutMapping("/atualizar/{id}")
     public ResponseEntity<MateriaResponseDto> atualizar(@PathVariable UUID id, @RequestBody MateriaRequestDto materiaRequestDto) {
 
@@ -52,7 +48,6 @@ public class MateriaController {
         return ResponseEntity.ok(materiaAtualizada);
     }
 
-    //deletar
     @DeleteMapping("/deletar/{id}")
     public ResponseEntity<MateriaResponseDto> deletar(@PathVariable UUID id) {
 

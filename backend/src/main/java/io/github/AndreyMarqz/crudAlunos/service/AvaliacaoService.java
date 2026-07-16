@@ -84,11 +84,12 @@ public class AvaliacaoService {
     }
 
     @Transactional
-    public void deletarNota(UUID id) {
+    public AvaliacaoResponseDto deletarNota(UUID id) {
 
         if(!avaliacaoRepository.existsById(id)) {
             throw new RuntimeException("Nota não encontrada para exclusão.");
         }
         avaliacaoRepository.deleteById(id);
+        return null;
     }
 }
